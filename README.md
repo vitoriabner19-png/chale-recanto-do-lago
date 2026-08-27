@@ -19,7 +19,18 @@ python3 -m http.server 8000
 # abrir http://localhost:8000
 ```
 
-## Publicar
+## 🌐 No ar
+
+**https://chale-recanto-do-lago.vercel.app**
+
+Hospedado na Vercel (conta `recantodolagocampina-5500`, projeto `chale-recanto-do-lago`).
+Para republicar depois de editar:
+```bash
+cd /Users/macminim4/AI/chale-recanto-do-lago
+npx vercel --prod
+```
+
+## Publicar (outras opções)
 
 Site 100% estático — qualquer host serve.
 
