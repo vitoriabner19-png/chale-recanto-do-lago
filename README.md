@@ -19,25 +19,46 @@ python3 -m http.server 8000
 # abrir http://localhost:8000
 ```
 
-## Publicar (Vercel)
+## Publicar
+
+Site 100% estático — qualquer host serve.
+
+### GitHub Pages (repo já criado e com push feito)
+
+Repo: https://github.com/vitoriabner19-png/chale-recanto-do-lago
+
+Falta 1 passo (precisa ser feito no navegador, logado como `vitoriabner19-png`):
+**Settings → Pages → Build and deployment → Source: "Deploy from a branch" →
+Branch: `main` / `/ (root)` → Save.**
+
+Em ~1 min o site fica no ar em:
+`https://vitoriabner19-png.github.io/chale-recanto-do-lago/`
+
+Depois disso, para atualizar o site é só:
+```bash
+cd /Users/macminim4/AI/chale-recanto-do-lago
+git add -A && git commit -m "ajustes" && git push
+```
+
+### Vercel (alternativa)
 
 ```bash
 cd /Users/macminim4/AI/chale-recanto-do-lago
+npx vercel login      # abre o navegador
 npx vercel --prod
 ```
 
-Site 100% estático — qualquer host serve (Vercel, Netlify, Cloudflare Pages, GitHub Pages).
-
 ## ⚙️ Configurar o WhatsApp
 
-No fim do `index.html`, no `<script>`, ajuste:
+Já configurado: `var WHATSAPP = "5544997108741";` — (44) 99710-8741.
+Os botões "Falar com os anfitriões" abrem o WhatsApp com mensagem pronta.
+Para trocar, edite essa linha no `<script>` no fim do `index.html`.
 
-```js
-var WHATSAPP = "";   // ex: "5544999999999"  (DDI 55 + DDD + número, só dígitos)
-```
+## Widget de reserva do Airbnb
 
-Enquanto estiver vazio, os botões "Falar com os anfitriões" apontam para o próprio anúncio
-do Airbnb. Preenchido, viram link `wa.me` com mensagem pronta.
+A seção "Informações práticas & reserva" tem o widget oficial do Airbnb embutido
+(`<div class="airbnb-embed-frame">` + `airbnb_jssdk`). Ele carrega no site publicado;
+na versão Artifact do Claude aparece só o link de fallback (o CSP bloqueia scripts externos).
 
 ## Conteúdo
 
